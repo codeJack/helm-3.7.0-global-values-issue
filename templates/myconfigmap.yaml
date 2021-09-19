@@ -1,0 +1,7 @@
+{{- $menu := merge $.Values.menu $.Values.global.menu -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-cfgmap2
+data:
+  dessert: {{ $menu.dessert }}
